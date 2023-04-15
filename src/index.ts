@@ -1,142 +1,87 @@
-export { IStreamConstructorOptions, Stream } from './Stream';
-export { LastTimeRecords } from './LastTimeRecords';
-export { RecordsBuffer } from './RecordsBuffer';
-export { StartTimeRedis } from './StartTimeRedis';
-export { getVirtualTimeObj, IVirtualTimeObjOptions, VirtualTimeObj } from './VirtualTimeObj';
-export {
-  TDbRecord, TEventRecord, IDbConfig, TSlot,
-  IEmPortionOfDataCount, IEmPortionOfDataSql,
-  IEmVirtualHourChanged, IEmVirtualDateChanged,
-  IEmSubtractedLastTimeRecords, IEmCurrentLastTimeRecords,
-  IEmBeforeLoadNextPortion, IEmAfterLoadNextPortion, IEmSaveLastTs,
-  EWinInsertType, ISocket, IOFnArgs, ICommonConfig, IVirtualTimeConfig,
-  ISenderConfig, IStreamConfig, IStartTimeConfig,
-} from './interfaces';
+// noinspection JSUnusedGlobalSymbols
 
-export {
-  getTimeParamMillis,
-  getTimeParamFromMillis,
-  timeParamRE,
-  padL,
-  padR,
-  sleep,
-} from './utils/utils';
-export {
-  findIndexOfNearestSmallerLEFT,
-  findIndexOfNearestSmallerRIGHT,
-  findIndexOfNearestSmallerBINARY,
-  findIndexOfNearestSmaller,
-} from './utils/find-index-of-nearest-smaller';
-export {
-  findIndexOfNearestSmallerInNumArrayLEFT,
-  findIndexOfNearestSmallerInNumArrayRIGHT,
-  findIndexOfNearestSmallerInNumArrayBINARY,
-  findIndexOfNearestSmallerInNumArray,
-} from './utils/find-index-of-nearest-smaller-in-num-array';
-export {
-  findSlotIntLEFT,
-  findSlotIntRIGHT,
-  findSlotIntBINARY,
-  findSlotInt,
-} from './utils/find-slot-int';
-export {
-  findSlotFloatLEFT,
-  findSlotFloatRIGHT,
-  findSlotFloatBINARY,
-  findSlotFloat,
-} from './utils/find-slot-float';
+export const reset = '\x1b[0m';
+export const rs = reset;
+export const clear = '\x1b[K';
+export const bold = '\x1b[1m';
+export const boldOff = '\x1b[21m';
+export const italics = '\x1b[3m';
+export const italicsOff = '\x1b[23m';
+export const def = '\x1b[39m';
 
-export {
-  TS_FIELD,
-  STREAM_ID_FIELD,
-  DEFAULTS,
-  STREAMS_ENV,
-  EMailSendRule,
-  isDeprecatedSendAlertsByEmail,
-  reloadStreamsEnv,
-} from './constants';
+export const dim = '\x1b[2m';
+export const underscore = '\x1b[4m';
+export const blink = '\x1b[5m';
+export const reverse = '\x1b[7m';
+export const hidden = '\x1b[8m';
+export const underlineOff = '\x1b[24m';
 
-// =============================== CLASSES =====================================
-export {
-  NumberWindow,
-  INumberWindowItem,
-  INumberWindowSetStatOptions,
-  INumberWindowConstructorOptions,
-} from './classes/base/NumberWindow';
+export const white = '\x1b[37m';
+export const w = white;
+export const black = '\x1b[30m';
+export const bk = black;
+export const red = '\x1b[31m';
+export const r = red;
+export const green = '\x1b[32m';
+export const g = green;
+export const yellow = '\x1b[33m';
+export const y = yellow;
+export const blue = '\x1b[34m';
+export const b = blue;
+export const magenta = '\x1b[35m';
+export const m = magenta;
+export const cyan = '\x1b[36m';
+export const c = cyan;
 
-export {
-  SingleEventTimeWindow,
-  ISingleEventTimeWindowSetStatOptions,
-  ISingleEventTimeWindowConstructorOptions,
-} from './classes/base/SingleEventTimeWindow';
+export const lWhite = '\x1b[97m';
+export const lw = lWhite;
+export const lGray = '\x1b[90m';
+export const lRed = '\x1b[91m';
+export const lr = lRed;
+export const lGreen = '\x1b[92m';
+export const lg = lGreen;
+export const lYellow = '\x1b[93m';
+export const ly = lYellow;
+export const lBlue = '\x1b[94m';
+export const lb = lBlue;
+export const lMagenta = '\x1b[95m';
+export const lm = lMagenta;
+export const lCyan = '\x1b[96m';
+export const lc = lCyan;
 
-export {
-  TimeWindow,
-  ITimeWindowItem,
-  ITimeWindowSetStatOptions,
-  ITimeWindowConstructorOptions,
-} from './classes/base/TimeWindow';
+export const bg = {
+  black: '\x1b[40m',
+  red: '\x1b[41m',
+  green: '\x1b[42m',
+  yellow: '\x1b[43m',
+  blue: '\x1b[44m',
+  magenta: '\x1b[45m',
+  cyan: '\x1b[46m',
+  white: '\x1b[47m',
+};
 
-export {
-  KeyedNumberWindow,
-  IKeyedNumberWindowHash,
-  IKeyedNumberWindowOptions,
-} from './classes/keyed/KeyedNumberWindow';
+export const defaultN = 39;
+export const greenN = 32;
 
-export {
-  KeyedSingleEventTimeWindow,
-  IKeyedSingleEventTimeWindowConstructorOptions,
-} from './classes/keyed/KeyedSingleEventTimeWindow';
+export const redN = 31;
+export const yellowN = 33;
+export const blueN = 34;
+export const magentaN = 35;
+export const cyanN = 36;
+export const greyN = 36;
 
-export {
-  KeyedTimeWindow,
-  IKeyedTimeWindowHash,
-  IKeyedTimeWindowInfo,
-  IKeyedTimeWindowOptions,
-} from './classes/keyed/KeyedTimeWindow';
-
-export {
-  Rectifier,
-  IRectifierOptions,
-} from './classes/applied/Rectifier';
-
-export {
-  SimpleEventEmitterAsyncQueue,
-  ISimpleEventEmitterQueueConstructorOptions,
-} from './classes/applied/SimpleEventEmitterAsyncQueue';
-
-export { StreamsManager } from './manager/streams-manager';
-export { IPrepareRectifierOptions, IPrepareAlertsBufferOptions, IPrepareStreamOptions } from './manager/i';
-
-// AlertsBuffer
-
-export {
-  TAlert,
-  IAlertEmailSettings,
-  TAlertEmailDetails,
-  TAlertsBufferRequired,
-  TAlertSentFlags,
-  TAlertTableRecord,
-  TMergeResult,
-} from './alerts-buffer/i-alert';
-
-export { AlertsStat, IStatTT, IStatTTtiu, TIU } from './alerts-buffer/AlertsStat';
-
-export { AlertsBuffer } from './alerts-buffer/AlertsBuffer';
-
-export {
-  traverse,
-  ITraverseNode,
-  flattenObjectPrimitiveLeafs,
-  fillSubjectTemplate,
-  removeHTML,
-  jsonToHtml,
-  fillHtmlTemplate,
-  htmlTemplate,
-  TFillHtmlTemplateArgs,
-  alertEmailDetails,
-  alertEmailHeader,
-  alertEmailFooter,
-} from './alerts-buffer/utils/utils';
-
-export { ISendAlertArgs, getSendMail } from './alerts-buffer/utils/email-service';
+export const emo = {
+  red: '📕',
+  orange: '📙',
+  green: '📗',
+  blue: '📘',
+  grey: '📓',
+  white: '📔',
+  bonus: '🎁',
+  exclam: '⚠',
+  stop: '🛑',
+  love: '❤',
+  smile: '😊',
+  time: '⏱',
+  check: '✔',
+};

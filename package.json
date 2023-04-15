@@ -2,7 +2,7 @@
   "name": "af-color",
   "version": "0.0.1",
   "description": "Colors",
-  "main": "./dist/cjs/src/index.js",
+  "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
   "author": "Viacheslav Makarov <vvmakarov@bazilio.ru>",
@@ -32,7 +32,7 @@
     "access": "public"
   },
   "files": [
-    "dist/cjs/src",
+    "dist/cjs",
     "dist/esm",
     "dist/types",
     "src"

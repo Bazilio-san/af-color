@@ -11,10 +11,7 @@
     ],
     "target": "es2019",
     "module": "commonjs",
-    "types": [
-      "node",
-      "jest"
-    ],
+    "types": [],
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
