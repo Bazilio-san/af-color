@@ -84,4 +84,5 @@ export const emo = {
   smile: '😊',
   time: '⏱',
   check: '✔',
+  clock: '🕒',
 };
