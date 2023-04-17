@@ -10,7 +10,7 @@ export const italicsOff = '\x1b[23m';
 export const def = '\x1b[39m';
 
 export const dim = '\x1b[2m';
-export const underscore = '\x1b[4m';
+export const underline = '\x1b[4m';
 export const blink = '\x1b[5m';
 export const reverse = '\x1b[7m';
 export const hidden = '\x1b[8m';
