@@ -11,7 +11,6 @@ export const italics = '\x1b[3m';
 export const italicsOff = '\x1b[23m';
 
 export const def = '\x1b[39m'; // Default (foreground color at startup)
-
 export const dim = '\x1b[2m';
 
 export const underline = '\x1b[4m';
