@@ -3,18 +3,25 @@
 export const reset = '\x1b[0m';
 export const rs = reset;
 export const clear = '\x1b[K';
+
 export const bold = '\x1b[1m';
 export const boldOff = '\x1b[21m';
+
 export const italics = '\x1b[3m';
 export const italicsOff = '\x1b[23m';
-export const def = '\x1b[39m';
+
+export const def = '\x1b[39m'; // Default (foreground color at startup)
 
 export const dim = '\x1b[2m';
+
 export const underline = '\x1b[4m';
-export const blink = '\x1b[5m';
+export const underlineOff = '\x1b[24m';
+
+export const blink = '\x1b[5m'; // enable background intensity
+export const blinkOff = '\x1b[25m'; // disable background intensity
+
 export const reverse = '\x1b[7m';
 export const hidden = '\x1b[8m';
-export const underlineOff = '\x1b[24m';
 
 export const white = '\x1b[37m';
 export const w = white;
@@ -58,6 +65,15 @@ export const bg = {
   magenta: '\x1b[45m',
   cyan: '\x1b[46m',
   white: '\x1b[47m',
+  def: '\x1b[49m', // background color at startup
+  lGray: '\x1b[100m',
+  lRed: '\x1b[101m',
+  lGreen: '\x1b[102m',
+  lYellow: '\x1b[103m',
+  lBlue: '\x1b[104m',
+  lMagenta: '\x1b[105m',
+  lCyan: '\x1b[106m',
+  lWhite: '\x1b[107m',
 };
 
 export const defaultN = 39;
