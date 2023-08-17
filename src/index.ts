@@ -110,4 +110,5 @@ export const emo = {
   pen: '🖊',
   envelope: '✉',
   classicalBuilding: '🏛',
+  prohibited: '🚫',
 };
